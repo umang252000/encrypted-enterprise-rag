@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "encrypted-rag-services"
+    static_configs:
+      - targets:
+          - "auth:8001"
+          - "gateway:8002"
+          - "ingestion:8003"
+          - "vector:8004"
+          - "rag:8005"
