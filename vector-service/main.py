@@ -7,7 +7,7 @@ app = FastAPI(title="Encrypted Vector Search Service")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://scaling-fortnight-jjppvpjpvg9vfgr9-3000.app.github.dev"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
