@@ -1,8 +1,8 @@
 fastapi
 uvicorn
+requests
 python-jose
 passlib[bcrypt]
 httpx
 cryptography
 numpy
-requests
