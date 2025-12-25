@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, HTTPException, Depends
 from models import LoginRequest
 from jwt_utils import create_access_token
@@ -7,11 +8,14 @@ app = FastAPI(title="Multi-Tenant Auth Service")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://scaling-fortnight-jjppvpjpvg9vfgr9-3000.app.github.dev"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+JWT_SECRET = os.getenv("JWT_SECRET", "dev-secret")
+JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
 
 # ⚠️ Prototype-only users
 FAKE_USERS = {
