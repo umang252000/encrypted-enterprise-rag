@@ -2,12 +2,10 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY . .
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install --no-cache-dir \
-    fastapi \
-    uvicorn \
-    numpy
+COPY . .
 
 EXPOSE 8005
 
