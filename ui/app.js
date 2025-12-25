@@ -8,7 +8,7 @@ async function login() {
   const password = document.getElementById("password").value;
 
   try {
-    const res = await fetch("https://scaling-fortnight-jjppvpjpvg9vfgr9-8001.app.github.dev/login", {
+    const res = await fetch("https://encrypted-enterprise-rag-auth.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password })
@@ -51,7 +51,7 @@ async function ask() {
   }
 
   try {
-    const res = await fetch("https://scaling-fortnight-jjppvpjpvg9vfgr9-8005.app.github.dev/query", {
+    const res = await fetch("https://encrypted-enterprise-rag.onrender.com/query", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
